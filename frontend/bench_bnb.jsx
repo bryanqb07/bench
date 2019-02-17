@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import configureStore from './store/store';
+import Root from './components/root';
 
 // WINDOW TESTING DELETE 
 
 import { postUser, postSession, deleteSession } from './util/api_util';
 
-
+import { login, logout } from './actions/session_actions';
 
 window.testUser = {
     username: "goodsheep",
@@ -18,6 +19,8 @@ window.testUser = {
 window.postUser = postUser;
 window.postSession = postSession;
 window.deleteSession = deleteSession;
+window.login = login;
+window.logout = logout;
 
 ////////////////////
 
@@ -31,5 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     //////////////////////
 
-    ReactDOM.render(<h1> Welcome to BenchBnb</h1>, root )
+    ReactDOM.render(<Root store={store} />, root )
 });

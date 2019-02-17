@@ -2,7 +2,7 @@
   "name": "BenchBnB",
   "version": "1.0.0",
   "description": "Silly bench project",
-  "main": "index.js",
+  "main": "bench_bnb.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development"
