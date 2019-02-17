@@ -6,13 +6,14 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    render :show
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       login!(@user)
-      redirect_to users_url(@user)
+      render :show
     else
       render json: @users.errors.full_messages, status: 422
     end
