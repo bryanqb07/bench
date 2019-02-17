@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development"
   },
-  "keywords": ["Google API"],
+  "keywords": [
+    "Google API"
+  ],
   "author": "Bryan Lynch",
   "license": "ISC",
   "dependencies": {
@@ -22,6 +24,7 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.29.4",
     "webpack-cli": "^3.2.3"
   }
