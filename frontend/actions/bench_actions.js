@@ -7,5 +7,5 @@ export const receiveBenches = benches => ({
     benches
 });
 
-export const fetchBenches = () => dispatch => getBenches()
+export const fetchBenches = (filters) => dispatch => getBenches(filters)
     .then(benches => dispatch(receiveBenches(benches)));

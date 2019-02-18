@@ -40,14 +40,14 @@ class BenchMap extends React.Component{
                     }
             };
             
-            this.props.updateBounds(bounds);
+            this.props.updateFilter("bounds", bounds);
 
         });
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.benches !== prevProps.benches) {
-            this.MarkerManager.updateMarkers(Object.values(this.props.benches));
+            this.MarkerManager.updateMarkers(this.props.benches);
         }
     }
 

@@ -1,7 +1,7 @@
 class Api::BenchesController < ApplicationController
 
   def index
-    @benches = Bench.in_bounds(params[:bounds])
+    @benches = self.bounds ? Bench.in_bounds(params[:bounds]) : Bench.all
     render :index
   end
 
@@ -23,6 +23,10 @@ class Api::BenchesController < ApplicationController
 
   def bench_params
     self.params.require(:bench).permit(:description, :lat, :lng)
+  end
+
+  def bounds
+    params[:bounds]
   end
 
 end
