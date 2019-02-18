@@ -5,13 +5,13 @@ import {
     RECEIVE_SESSION_ERRORS
 } from '../actions/session_actions';
 
-export default (state = {}, action) => {
+export default (state = [], action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_SESSION_ERRORS:
-            return merge({}, state, { errors: action.errors });    
+            return action.errors
         case RECEIVE_CURRENT_USER:
-            return merge({}, state, { errors: [] });
+            return [];
         default:
             return state;
     }
