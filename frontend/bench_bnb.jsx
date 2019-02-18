@@ -13,6 +13,7 @@ import Root from './components/root';
 import { getBenches } from './util/bench_api_util';
 import { fetchBenches } from './actions/bench_actions';
 window.fetchBenches = fetchBenches;
+window.getBenches = getBenches;
 
 // window.testUser = {
 //     username: "goodsheep",
@@ -30,6 +31,15 @@ window.fetchBenches = fetchBenches;
 //     lat: 37.7559157, 
 //     lng: -122.4388047,
 // };
+
+window.testfilter = {
+    bounds: {
+    southWest: { lat: 37.77, lng: -122.45 },
+    northEast: { lat: 37.78, lng: -122.43 }
+    }
+};
+
+
 ////////////////////
 
 
