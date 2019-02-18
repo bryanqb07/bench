@@ -13,3 +13,14 @@ bench3 = Bench.create(description: "Another bench", lat: 37.7774814, lng: -122.4
 bench4 = Bench.create(description: "A fun bench", lat: 37.7788891, lng: -122.4400402)
 bench5 = Bench.create(description: "An old bench", lat: 37.782656, lng: -122.499650)
 bench6 = Bench.create(description: "A subpar bench", lat: 37.772749, lng: -122.455446)
+
+
+
+southWest = lat: 37.77, lng: -122.45
+northEast = lat: 37.78, lng: -122.43
+
+
+bounds = {
+  southWest: { lat: 37.77, lng: -122.45 },
+  northEast: { lat: 37.78, lng: -122.43 }
+}
