@@ -10,6 +10,9 @@ import Root from './components/root';
 
 // import { login, logout } from './actions/session_actions';
 
+import { fetchBenches } from './util/bench_api_util';
+window.fetchBenches = fetchBenches;
+
 // window.testUser = {
 //     username: "goodsheep",
 //     password: "finger69",
