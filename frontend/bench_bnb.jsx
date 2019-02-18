@@ -10,7 +10,8 @@ import Root from './components/root';
 
 // import { login, logout } from './actions/session_actions';
 
-import { fetchBenches } from './util/bench_api_util';
+import { getBenches } from './util/bench_api_util';
+import { fetchBenches } from './actions/bench_actions';
 window.fetchBenches = fetchBenches;
 
 // window.testUser = {
@@ -48,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     // // WINDOW TESTING //
-    // window.getState = store.getState;
-    // window.dispatch = store.dispatch;
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
     // //////////////////////
 
     ReactDOM.render(<Root store={store} />, root )
