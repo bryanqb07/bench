@@ -21,7 +21,11 @@ import Root from './components/root';
 // window.deleteSession = deleteSession;
 // window.login = login;
 // window.logout = logout;
-
+// window.testBench = {
+//     description: "a new bench",
+//     lat: 37.7559157, 
+//     lng: -122.4388047,
+// };
 ////////////////////
 
 
