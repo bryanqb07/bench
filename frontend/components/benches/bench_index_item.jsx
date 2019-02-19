@@ -5,5 +5,7 @@ export default ({bench}) => (
         Id: {bench.id}
         <br />
         Description: {bench.description}
+        <br />
+        Seating: {bench.seating}
     </li>
 )

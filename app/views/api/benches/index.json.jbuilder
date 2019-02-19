@@ -1,5 +1,5 @@
 @benches.each do |bench|
   json.set! bench.id do
-    json.extract! bench, :id, :description, :lat, :lng
+    json.partial! "api/benches/bench.json.jbuilder", bench: bench
   end
 end

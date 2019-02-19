@@ -22,7 +22,7 @@ class Api::BenchesController < ApplicationController
   protected
 
   def bench_params
-    self.params.require(:bench).permit(:description, :lat, :lng)
+    self.params.require(:bench).permit(:description, :lat, :lng, :seating)
   end
 
   def bounds
