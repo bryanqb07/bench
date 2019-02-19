@@ -18,3 +18,8 @@
    width: 500px;
    height: 500px;
  }
+
+.content-wrapper{
+  display: flex;
+  justify-content: space-around;
+}

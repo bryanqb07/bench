@@ -5,7 +5,7 @@ import GreetingContainer from './greetings/greeting_container';
 import LoginFormContainer from './forms/login_form_container';
 import SignupFormContainer from './forms/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import SearchContainer from './benches/search_container';
+import SearchContainer from './search/search_container';
 import BenchFormContainer from './benches/bench_form_container';
 
 export default () => (

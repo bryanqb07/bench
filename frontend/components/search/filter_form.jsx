@@ -5,7 +5,7 @@ const handleChange = (filter, updateFilter) => (e) => (
 );
 
 export default ({minSeating, maxSeating, updateFilter}) => (
-    <div>
+    <div className="filter-form">
         <span>Filter Seats</span>
         <br/>
         <label>Minimum Seating
