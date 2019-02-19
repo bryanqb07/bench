@@ -4,19 +4,22 @@ export default class MarkerManager{
         this.markers = {};  
     }
 
-    updateMarkers(benches){
-        const benchesObj = {};
-        benches.forEach(bench => benchesObj[bench.id] = bench);
+    updateMarkers(benches, multipleBenches){
+        if(multipleBenches){
+            const benchesObj = {};
+            benches.forEach(bench => benchesObj[bench.id] = bench);
+            benches
+                .filter(bench => !this.markers[bench.id])  // get every bench not in markers
+                .forEach(newBench => this.createMarkerFromBench(newBench)); // create new marker for each bench not in list
+            
 
-        benches
-            .filter(bench => !this.markers[bench.id])  // get every bench not in markers
-            .forEach(newBench => this.createMarkerFromBench(newBench)); // create new marker for each bench not in list
-        
-
-        Object.keys(this.markers)
-            .filter(benchId => !benchesObj[benchId]) // get all existing markers not in benches object
-            .forEach(benchId => this.removeMarker(this.markers[benchId])); // then delete each marker
-        }   
+            Object.keys(this.markers)
+                .filter(benchId => !benchesObj[benchId]) // get all existing markers not in benches object
+                .forEach(benchId => this.removeMarker(this.markers[benchId])); // then delete each marker
+        }else{
+            this.createMarkerFromBench(benches);
+        } 
+    }  
 
     createMarkerFromBench(bench){
         const pos = new google.maps.LatLng(bench.lat, bench.lng);

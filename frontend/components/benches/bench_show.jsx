@@ -5,11 +5,9 @@ import BenchMap from './bench_map';
 
 export default ({bench}) => (
     <div>
-
+        <BenchMap benches={bench} />
         <ul>
             <BenchIndexItem bench={bench}/>
         </ul>
     </div>
 )
-
-//    < BenchMap benches = { bench } /> ADD IN LATER
