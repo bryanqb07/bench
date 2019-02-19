@@ -7,7 +7,7 @@ class BenchForm extends React.Component{
             description: "",
             seating: 0
         };
-        this.SEAT_NUM_OPTIONS = [0, 1, 2, 3, 4, 5];
+        this.SEAT_NUM_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }

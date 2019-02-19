@@ -3,8 +3,10 @@ import Search from './search';
 import { updateFilter } from '../../actions/filter_actions';
 import { asArray } from '../../reducers/selectors';
 
-const mapStateToProps = ({entities}) => ({
-    benches: asArray(entities)
+const mapStateToProps = (state) => ({
+    benches: asArray(state.entities),
+    minSeating: state.ui.filters.minSeating,
+    maxSeating: state.ui.filters.maxSeating
 });
 
 const mapDispatchToProps = dispatch => ({
