@@ -14,14 +14,13 @@ class BenchMap extends React.Component{
         };
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
-        this.MarkerManager.updateMarkers(Object.values(this.props.benches));
+        this.MarkerManager.updateMarkers(this.props.benches);
         this.listenForMove();
     }
 
     listenForMove(){
-        console.log(this.props);
         google.maps.event.addListener(this.map, 'idle', () =>{
-            const bds = this.map.getBounds();
+            const {north, south, east, west} = this.map.getBounds().toJSON();
             // window.testfilter = {
             //     bounds: {
             //         southWest: { lat: 37.77, lng: -122.45 },
@@ -29,26 +28,16 @@ class BenchMap extends React.Component{
             //     }
             // };
 
-
             const bounds = {
-                southWest: {
-                        lat: bds.getSouthWest().lat(),
-                        lng: bds.getSouthWest().lng()},
-                northEast: {
-                        lat: bds.getNorthEast().lat(),
-                        lng: bds.getNorthEast().lng(),
-                    }
+                southWest: { lat: south, lng: west },
+                northEast: { lat: north, lng: east }
             };
-            
-            this.props.updateFilter("bounds", bounds);
-
+            this.props.updateFilter('bounds', bounds);
         });
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.benches !== prevProps.benches) {
-            this.MarkerManager.updateMarkers(this.props.benches);
-        }
+    componentDidUpdate() {
+        this.MarkerManager.updateMarkers(this.props.benches);
     }
 
     render(){

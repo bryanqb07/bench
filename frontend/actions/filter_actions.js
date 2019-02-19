@@ -11,7 +11,7 @@ export const changeFilter = (filter, value) => ({
 export function updateFilter(filter, value) {
     return (dispatch, getState) => {
         dispatch(changeFilter(filter, value));
-        return fetchBenches(getState().filters)(dispatch);
+        return fetchBenches(getState().ui.filters)(dispatch);
         // delicious curry!
     };
 }
