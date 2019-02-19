@@ -44,12 +44,6 @@ class BenchMap extends React.Component{
         });
     }
 
-
-    handleClick(coords){
-
-    }
-
-
     componentDidUpdate() {
         this.MarkerManager.updateMarkers(this.props.benches);
     }

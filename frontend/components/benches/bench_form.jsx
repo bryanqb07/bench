@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default class BenchForm extends React.Component{
+class BenchForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             description: "",
-            lat: 0,
-            lng: 0,
+            lat: this.props.lat,
+            lng: this.props.lng,
             seating: 0
         };
         this.SEAT_NUM_OPTIONS = [0, 1, 2, 3, 4, 5];
@@ -20,20 +20,23 @@ export default class BenchForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        this.props.createBench(this.state);
+        this.props.history.push('/');
     }
 
     render(){
+        return(
         <div>
             <p>Add New Bench</p>
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <label> Description
                     <input type="text" value={this.state.description} onChange={this.handleChange("description")}/>
                 </label>
                 <label> Latitude
-                    <input type="text" value={this.state.lat } onChange={this.handleChange("lat")}/>
+                    <input type="text" disabled value={this.props.lat}/>
                 </label>
                 <label> Longitude
-                    <input type="text" value={this.state.lng} onChange={this.handleChange("lng")}/>
+                    <input type="text" disabled value={this.props.lng}/>
                 </label>
                 <label> Seating
                     <select value={this.state.seating} onChange={this.handleChange("seating")}>
@@ -45,8 +48,8 @@ export default class BenchForm extends React.Component{
                 <button>Submit</button>
             </form>
         </div>
+        )
     }
-
-
 }
 
+export default BenchForm;

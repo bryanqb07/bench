@@ -10,7 +10,7 @@ import Root from './components/root';
 
 // import { login, logout } from './actions/session_actions';
 
-import { getBenches } from './util/bench_api_util';
+import { getBenches, createBench } from './util/bench_api_util';
 import { fetchBenches } from './actions/bench_actions';
 window.fetchBenches = fetchBenches;
 window.getBenches = getBenches;
@@ -26,11 +26,17 @@ window.getBenches = getBenches;
 // window.deleteSession = deleteSession;
 // window.login = login;
 // window.logout = logout;
-// window.testBench = {
-//     description: "a new bench",
-//     lat: 37.7559157, 
-//     lng: -122.4388047,
-// };
+
+window.createBench = createBench;
+
+window.testBench = {
+    description: "a new bench",
+    lat: 37.2559157, 
+    lng: -122.5388047,
+    seating: 2
+};
+
+
 
 window.testfilter = {
     bounds: {
