@@ -5,8 +5,6 @@ class BenchForm extends React.Component{
         super(props);
         this.state = {
             description: "",
-            lat: this.props.lat,
-            lng: this.props.lng,
             seating: 0
         };
         this.SEAT_NUM_OPTIONS = [0, 1, 2, 3, 4, 5];
@@ -20,7 +18,15 @@ class BenchForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.createBench(this.state);
+
+        const bench = {
+            description: this.state.description,
+            seating: this.state.seating,
+            lat: this.props.lat,
+            lng: this.props.lng
+        };
+
+        this.props.createBench(bench);
         this.props.history.push('/');
     }
 
