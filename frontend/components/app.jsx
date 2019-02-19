@@ -7,6 +7,7 @@ import SignupFormContainer from './forms/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SearchContainer from './search/search_container';
 import BenchFormContainer from './benches/bench_form_container';
+import BenchShowContainer from './benches/bench_show_container';
 
 export default () => (
     <div>
@@ -19,5 +20,6 @@ export default () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/benches/new" component={BenchFormContainer} />
             <Route exact path="/" component={SearchContainer} />
+            <Route path="/bench/:benchId" component={BenchShowContainer}/>
     </div>
 )
