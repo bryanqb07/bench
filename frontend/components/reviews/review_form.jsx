@@ -19,7 +19,8 @@ class ReviewForm extends React.Component{
             comments: this.state.comments,
             bench_id: this.props.bench.id
         };
-        this.props.postReview(review);
+        this.props.postReview(review)
+        .then(() => this.setState({ comments: ""}));
     }
 
     handleChange(type){

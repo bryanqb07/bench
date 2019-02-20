@@ -7,7 +7,7 @@ class Bench < ApplicationRecord
     class_name: 'Review'
 
   def average_rating
-    reviews.average(:rating)
+    reviews.average(:rating) #same as below
   end
 
   def self.in_bounds(bounds) # use sql instead of ruby logic
