@@ -20,6 +20,8 @@ class BenchIndexItem extends React.Component{
                     Description: {bench.description}
                     <br />
                     Seating: {bench.seating}
+                    <br />
+                    Avg Rating: {bench.average_rating ? bench.average_rating : 'n/a'} 
             </li>
         )
     }

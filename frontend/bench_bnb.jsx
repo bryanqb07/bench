@@ -25,9 +25,9 @@ import { getBenches, createBench } from './util/bench_api_util';
 
 import { fetchBenches, fetchBench } from './actions/bench_actions';
 
-import { getReviewsByBenchId } from './reducers/selectors';
+// import { getReviewsByBenchId } from './reducers/selectors';
 
-window.getReviewsByBenchId = getReviewsByBenchId;
+// window.getReviewsByBenchId = getReviewsByBenchId;
 
 window.fetchBenches = fetchBenches;
 window.getBenches = getBenches;

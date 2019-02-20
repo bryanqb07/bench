@@ -2,16 +2,16 @@ export const asArray = ({ benches }) => (
     Object.keys(benches).map(key => benches[key])
 );
 
-export const getReviewsByBenchId = ({entities}, benchId) => (
-    entities.benches[benchId].reviewIds.map(reviewId => 
-        entities.reviews[reviewId]
-    )
-);
+export const getBenchReviews = ({entities}, bench) => {
+    return bench.reviewIds ? bench.reviewIds.map(reviewId => entities.reviews[reviewId]) : [];
+};
+
+export const getAuthors = ({entities}, posts) => {
+    let authors = {};
+    if(posts){
+        posts.map(post => { authors[post.author_id] = entities.authors[post.author_id].username;}); 
+    }
+    return authors;
+};
 
 
-
-// export const getAuthorsByReviewId = ({ entities} , reviewId) => {
-//     entities.reviews[reviewId].author_id.map(authorId =>
-//         entities.reviews[reviewId]
-//     );
-// };

@@ -2,6 +2,7 @@ import React from 'react';
 import BenchIndexItem from './bench_index_item';
 import BenchMap from './bench_map';
 import { Link } from 'react-router-dom';
+import ReviewIndex from '../reviews/review_index';
 
 
 class BenchShow extends React.Component{
@@ -15,16 +16,19 @@ class BenchShow extends React.Component{
 
     render(){
         const bench = this.props.bench;
+        const reviews = this.props.reviews;
+        const authors = this.props.authors;
 
         return(
             <div className="content-wrapper">
                 <BenchMap benches={bench} />
-                <ul> <span>Bench Details</span>
+                <ul> <b>Bench Details</b>
                      <br/>
                     <BenchIndexItem bench={bench} />
                 </ul>
-                <ul><span>Reviews</span>
+                <ul><b>Reviews</b>
                     <br />
+                    <ReviewIndex reviews={reviews} authors={authors}/>
                 </ul>
                 <div>
                     <Link to="/">Return to Bench Index</Link>
