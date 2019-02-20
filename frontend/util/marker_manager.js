@@ -5,6 +5,7 @@ export default class MarkerManager{
     }
 
     updateMarkers(benches, multipleBenches){
+        console.log(multipleBenches);
         if(multipleBenches){
             const benchesObj = {};
             benches.forEach(bench => benchesObj[bench.id] = bench);

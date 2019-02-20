@@ -10,7 +10,19 @@ import Root from './components/root';
 
 // import { login, logout } from './actions/session_actions';
 
+import { postReview } from './util/review_api_util';
+
+window.postReview = postReview;
+
+window.testReview = {
+    author_id: 1,
+    comments: "a great bench!",
+    bench_id: 8,
+    rating: 5
+};
+
 import { getBenches, createBench } from './util/bench_api_util';
+
 import { fetchBenches } from './actions/bench_actions';
 window.fetchBenches = fetchBenches;
 window.getBenches = getBenches;

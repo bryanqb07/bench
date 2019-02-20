@@ -5,6 +5,11 @@ class User < ApplicationRecord
   validates :password_digest, presence: { message:  'Password can\'t be blank' }
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
+  has_many :reviews,
+      primary_key: :id,
+      foreign_key: :author_id,
+      class_name: 'Review'
+
 
   def password=(password)
     @password = password
