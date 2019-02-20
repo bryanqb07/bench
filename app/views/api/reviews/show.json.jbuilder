@@ -1,1 +1,1 @@
-json.extract! @review, :id, :bench_id, :author_id, :comments
+json.partial! "api/reviews/review.json.jbuilder", review: @review

@@ -14,4 +14,10 @@ export const createBench = bench => (
     })
 );
 
+export const fetchBench = benchId => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/benches/${benchId}`,
+    })
+);
 

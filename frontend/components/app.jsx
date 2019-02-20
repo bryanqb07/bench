@@ -13,7 +13,7 @@ export default () => (
     <div>
         <header>
             <h1>Bench BnB</h1>
-            <Route exact path="/"  component={GreetingContainer} />
+            <Route path="/"  component={GreetingContainer} />
 
         </header>
             <AuthRoute exact path="/login" component={LoginFormContainer} />

@@ -23,9 +23,15 @@ window.testReview = {
 
 import { getBenches, createBench } from './util/bench_api_util';
 
-import { fetchBenches } from './actions/bench_actions';
+import { fetchBenches, fetchBench } from './actions/bench_actions';
+
+import { getReviewsByBenchId } from './reducers/selectors';
+
+window.getReviewsByBenchId = getReviewsByBenchId;
+
 window.fetchBenches = fetchBenches;
 window.getBenches = getBenches;
+window.fetchBench = fetchBench;
 
 // window.testUser = {
 //     username: "goodsheep",
@@ -56,6 +62,8 @@ window.testfilter = {
     northEast: { lat: 37.78, lng: -122.43 }
     }
 };
+
+
 
 
 ////////////////////

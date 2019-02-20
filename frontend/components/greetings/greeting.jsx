@@ -15,12 +15,12 @@ class Greeting extends React.Component{
 
     render(){
         const greeting = this.props.currentUser ? (
-            <div>
+            <div className="welcome-wrapper">
                 <h3>Welcome {this.props.currentUser.username}</h3>
                 <button onClick={this.handleClick}>Logout</button>
             </div>
         ) : (
-            <div>
+            <div className="signup-wrapper">
                 <Link to="/signup">Signup</Link>
                 <Link to="/login">Login</Link> 
             </div>

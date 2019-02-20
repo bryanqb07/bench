@@ -8,9 +8,11 @@ export const receiveBenches = benches => ({
     benches
 });
 
-export const receiveBench = bench => ({
+export const receiveBench = ({ bench, reviews, authors}) => ({
     type: RECEIVE_BENCH,
-    bench
+    bench,
+    reviews,
+    authors,
 });
 
 export const fetchBenches = filters => dispatch => {
@@ -20,5 +22,10 @@ export const fetchBenches = filters => dispatch => {
 
 export const createBench = formBench => dispatch => {
     APIUtil.createBench(formBench)
+    .then(bench => dispatch(receiveBench(bench)));
+};
+
+export const fetchBench = benchId => dispatch => {
+    APIUtil.fetchBench(benchId)
     .then(bench => dispatch(receiveBench(bench)));
 };
