@@ -3,6 +3,7 @@ import BenchIndexItem from './bench_index_item';
 import BenchMap from './bench_map';
 import { Link } from 'react-router-dom';
 import ReviewIndex from '../reviews/review_index';
+import ReviewForm from '../reviews/review_form';
 
 
 class BenchShow extends React.Component{
@@ -14,10 +15,17 @@ class BenchShow extends React.Component{
         this.props.fetchBench(this.props.bench.id);
     }
 
+    componentDidUpdate(prevProps){
+        if(prevProps.reviews.join !== this.props.reviews.join){
+            this.props.fetchBench(this.props.bench.id);
+        }
+    }
+
     render(){
         const bench = this.props.bench;
         const reviews = this.props.reviews;
         const authors = this.props.authors;
+        const postReview = this.props.postReview;
 
         return(
             <div className="content-wrapper">
@@ -26,10 +34,15 @@ class BenchShow extends React.Component{
                      <br/>
                     <BenchIndexItem bench={bench} />
                 </ul>
-                <ul><b>Reviews</b>
-                    <br />
-                    <ReviewIndex reviews={reviews} authors={authors}/>
-                </ul>
+                <div className="Review Section">
+                    <ul><b>Reviews</b>
+                        <br />
+                        <ReviewIndex reviews={reviews} authors={authors}/>
+                    </ul>
+                    <h3>Leave a Review!</h3>
+                    <ReviewForm postReview={postReview}
+                                bench={bench}/>
+                </div>
                 <div>
                     <Link to="/">Return to Bench Index</Link>
                 </div>

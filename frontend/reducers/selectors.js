@@ -14,4 +14,8 @@ export const getAuthors = ({entities}, posts) => {
     return authors;
 };
 
+// export const getCurrentUser = (state) => (
+//     state.session.id ? state.entities.users[state.session.id] : {}
+// );
+
 

@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import BenchShow from './bench_show';
 import { postReview } from '../../actions/review_actions';
 import { fetchBench } from '../../actions/bench_actions';
-import { getBenchReviews, getAuthors } from '../../reducers/selectors';
+import { getBenchReviews, 
+         getAuthors} from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
     const currentBench = state.entities.benches[ownProps.match.params.benchId];
@@ -12,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     return({
         bench: currentBench,
         reviews: currentReviews,
-        authors: currentAuthors
+        authors: currentAuthors,
     }); 
 };
 

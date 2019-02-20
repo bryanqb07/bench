@@ -2,6 +2,9 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_BENCHES, RECEIVE_BENCH } from '../actions/bench_actions';
 
+import { RECEIVE_REVIEW } from '../actions/review_actions';
+import review_index from '../components/reviews/review_index';
+
 export default (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
@@ -9,6 +12,11 @@ export default (state = {}, action) => {
             return action.benches;  
         case RECEIVE_BENCH:
             return merge({}, state, { [action.bench.id]: action.bench});
+        case RECEIVE_REVIEW:
+            const newState = merge({}, state);
+            console.log(action);
+            newState[action.review.bench_id].reviewIds.push(action.review.id);
+            return newState;
         default:
             return state;
     }

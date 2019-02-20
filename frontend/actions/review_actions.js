@@ -2,10 +2,10 @@ export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 
 import * as APIUtil from '../util/review_api_util';
 
-export const receiveReview = (review, author) => ({
+export const receiveReview = payload => ({
     type: RECEIVE_REVIEW,
-    review,
-    author
+    review: payload.review,
+    author: payload.author
 });
 
 export const postReview = formReview => dispatch => APIUtil.postReview(formReview)
